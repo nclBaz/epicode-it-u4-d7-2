@@ -2,6 +2,7 @@ package u4d7;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 import u4d7.entities.Student;
@@ -19,7 +20,7 @@ public class App {
 		// DA ARRAY A LISTA
 		Student[] studentsArray = { aldo, giovanni, giacomo };
 
-		List<Student> lista = new ArrayList<>(Arrays.asList(studentsArray));
+		List<Student> lista = new ArrayList<>(Arrays.asList(studentsArray)); // UPCASTING
 
 		// DA LISTA AD ARRAY
 		// Student[] studentsArray2 = (Student[]) lista.toArray();
@@ -96,6 +97,23 @@ public class App {
 		}
 
 		System.out.println("La lista è vuota? " + lista.isEmpty());
+
+		// *********************** LINKED LIST ****************************
+
+		LinkedList<Student> linkedStudents = new LinkedList<>();
+		// Qua non sto usando l'UPCASTING, il che significa che potrò usare i metodi
+		// specifici di LL
+		// e non solo quelli comuni a tutte le List. Di contro però non potrò sostituire
+		// cambiando un'
+		// unica riga di codice una LL con un ArrayList ad es.
+		linkedStudents.push(giacomo);
+		linkedStudents.pop();
+
+		// ************************** LISTE E TIPI PRIMITIVI *****************
+		List<Integer> interi = new ArrayList<>(); // Integer è la WRAPPER CLASS per gli interi
+		// Nelle liste non posso salvare tipi primitivi ma solo oggetti
+		interi.add(2);
+		interi.add(10);
 
 	}
 
